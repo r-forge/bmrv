@@ -1,0 +1,31 @@
+\name{hbmr_data}
+\alias{hbmr_data}
+\docType{data}
+\title{
+Example data for HBMR
+}
+\description{
+%%  ~~ A concise (1-5 lines) description of the dataset. ~~
+}
+\usage{data(hbmr_data)}
+\format{
+  The format is:
+List of 3
+ $ pheno_data: num [1:600] -0.255 0.398 2.982 1.361 -0.165 ...
+ $ geno_data : num [1:600, 1:50] 1 0 0 0 0 0 0 0 0 0 ...
+ $ qual_data : num [1:600, 1:50] 5 5 5 99 99 99 99 99 99 99 ...
+}
+\details{
+%%  ~~ If necessary, more details than the __description__ above ~~
+}
+\source{
+%%  ~~ reference to a publication or URL from which the data were obtained ~~
+}
+\references{
+%%  ~~ possibly secondary sources and usages ~~
+}
+\examples{
+data(hbmr_data)
+## maybe str(hbmr_data) ; plot(hbmr_data) ...
+}
+\keyword{datasets}

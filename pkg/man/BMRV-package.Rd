@@ -1,0 +1,42 @@
+\name{BMRV-package}
+\alias{BMRV-package}
+\alias{BMRV}
+\docType{package}
+\title{
+Bayesian models for rare variant association detection
+}
+\description{
+This package provides two Bayesian models for detecting the association between rare variants and traits that can be continuous, ordinal or binary. 
+BLVCM detects interaction effect and is dedicated to twin design while it can also be applied to independent samples. 
+HBMR incorporates genotype uncertainty information and can be applied to either independent or family samples. Furhtermore, it deals with continuous, binary and ordinal traits.
+}
+\details{
+\tabular{ll}{
+Package: \tab BMRV\cr
+Type: \tab Package\cr
+Version: \tab 1.3\cr
+Date: \tab 2015-12-06\cr
+License: \tab None\cr
+}
+blvcm
+hbmr
+}
+\author{
+Liang He
+
+Maintainer: Liang He <liang.he@duke.edu>
+}
+\references{
+He, L., Sillanp‰‰, M. J., Ripatti, S., & Pitk‰niemi, J. (2014). Bayesian Latent Variable Collapsing Model for Detecting Rare Variant Interaction Effect in Twin Study. Genetic epidemiology, 38(4), 310-324.
+
+He, L., Pitk‰niemi, J., Sarin, A. P., Salomaa, V., Sillanp‰‰, M. J., & Ripatti, S. (2015). Hierarchical Bayesian Model for Rare Variant Association Analysis Integrating Genotype Uncertainty in Human Sequence Data. Genetic epidemiology, 39(2), 89-100.
+}
+~~ Optionally other standard keywords, one per line, from file KEYWORDS in the R documentation directory ~~
+\keyword{ package }
+\seealso{
+
+}
+\examples{
+data(blvcm_data)
+temp<- blvcm(blvcm_data$pheno_data, blvcm_data$geno_data, iter=20000, model = 3)
+}
