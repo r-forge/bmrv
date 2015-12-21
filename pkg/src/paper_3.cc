@@ -2168,27 +2168,115 @@ void gibbssampler2_ord(double *result, int * numRows, int * numCols, int * numCo
 			double eta = delta_t*mu_t[j]+beta_0_t+mu_cov_t[j]+ransum_t[j];
 			double l_b = t_t[y[j]];
 			double u_b = t_t[y[j]+1];
+			double interv = u_b - l_b;
 			double max_w = eta;
-			if(eta<l_b)
-			{
-				max_w = l_b;
-			}
-			if(eta>u_b)
-			{
-				max_w = u_b;
-			}
 
 			gen_type4 die_gen_u1(generator, distribution_type4());
 			boost::generator_iterator<gen_type4> die_u1(&die_gen_u1);
-			double prop = *die_u1++;
-			prop = l_b + prop*(u_b-l_b);
-			double rej = *die_u1++;
-			while(rej>exp((-0.5)*(prop-max_w)*(prop+max_w-2*eta)))
+
+			double prop = 0;
+
+			if(eta<l_b)
 			{
+				max_w = l_b;
+				if(interv<1)
+				{
 					prop = *die_u1++;
 					prop = l_b + prop*(u_b-l_b);
-					rej = *die_u1++;
+					double rej = *die_u1++;
+					while(rej>exp((-0.5)*(prop-max_w)*(prop+max_w-2*eta)))
+					{
+						prop = *die_u1++;
+						prop = l_b + prop*(u_b-l_b);
+						rej = *die_u1++;
+					}
+				}
+				else
+				{
+					gen_type2 die_gen_w(generator, distribution_type2(max_w,1));
+					boost::generator_iterator<gen_type2> die_w(&die_gen_w);
+					prop = *die_w++;
+					while((prop<max_w)||(prop>u_b))
+					{
+						prop = *die_w++;
+					}
+					double rej = *die_u1++;
+					while(rej>exp((max_w-eta)*(max_w-prop)))
+					{
+						prop = *die_w++;
+						while((prop<max_w)||(prop>u_b))
+						{
+							prop = *die_w++;
+						}
+						rej = *die_u1++;
+					}
+				}
 			}
+			else
+			{
+				if(eta>u_b)
+				{
+					max_w = u_b;
+					if(interv<1)
+					{
+						prop = *die_u1++;
+						prop = l_b + prop*(u_b-l_b);
+						double rej = *die_u1++;
+						while(rej>exp((-0.5)*(prop-max_w)*(prop+max_w-2*eta)))
+						{
+							prop = *die_u1++;
+							prop = l_b + prop*(u_b-l_b);
+							rej = *die_u1++;
+						}
+					}
+					else
+					{
+						gen_type2 die_gen_w(generator, distribution_type2(max_w,1));
+						boost::generator_iterator<gen_type2> die_w(&die_gen_w);
+						prop = *die_w++;
+						while((prop>max_w)||(prop<l_b))
+						{
+							prop = *die_w++;
+						}
+						double rej = *die_u1++;
+						while(rej>exp((max_w-eta)*(max_w-prop)))
+						{
+							prop = *die_w++;
+							while((prop>max_w)||(prop<l_b))
+							{
+								prop = *die_w++;
+							}
+							rej = *die_u1++;
+						}
+					}
+				}
+				else
+				{
+					if(interv<1)
+					{
+						prop = *die_u1++;
+						prop = l_b + prop*(u_b-l_b);
+						double rej = *die_u1++;
+						while(rej>exp((-0.5)*(prop-max_w)*(prop+max_w-2*eta)))
+						{
+							prop = *die_u1++;
+							prop = l_b + prop*(u_b-l_b);
+							rej = *die_u1++;
+						}
+					}
+					else
+					{
+						gen_type2 die_gen_w(generator, distribution_type2(max_w,1));
+						boost::generator_iterator<gen_type2> die_w(&die_gen_w);
+						prop = *die_w++;
+						while((prop<l_b)||(prop>u_b))
+						{
+							prop = *die_w++;
+						}
+					}
+				}
+			}
+		
 			w_t[j] = prop;
 			
 		}
