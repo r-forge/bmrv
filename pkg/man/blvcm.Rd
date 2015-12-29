@@ -44,9 +44,7 @@ A matrix of other covariates.
 Initial values for \eqn{\beta} and \eqn{\gamma} (must be non-negative). The default values are 0.
 }
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
+
 \value{
 %%  ~Describe the value returned
 %%  If it is a LIST, use
@@ -73,18 +71,13 @@ He, L., Sillanp‰‰, M. J., Ripatti, S., & Pitk‰niemi, J. (2014). Bayesian Latent 
 \author{
 Liang He
 }
-\note{
-%%  ~~further notes~~
-}
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
+
 \examples{
 data(blvcm_data)
-blvcm(blvcm_data$pheno, blvcm_data$geno, iter=20000, burnin=1000, model=3)
+blvcm(blvcm_data$pheno, blvcm_data$geno[,1:3], iter=10000, burnin=1000, model=3)
 
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the

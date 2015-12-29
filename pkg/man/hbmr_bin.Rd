@@ -8,8 +8,8 @@ Hierarchical Bayesian multiple regression model incorporating genotype uncertain
 The function implements HBMR using a Gibbs sampler with probit link function for binary traits.
 }
 \usage{
-hbmr_bin(pheno, geno, qi = matrix(), fam = 0, kin = matrix(), iter = 10000, burnin = 500, gq = 20, 
-imp = 0.1, cov = matrix(), maf = c(), pa = 1.3, pb = 0.04)
+hbmr_bin(pheno, geno, qi = matrix(), fam = 0, kin = matrix(), iter = 10000, burnin = 500,
+gq = 20, imp = 0.1, cov = matrix(), maf = c(), pa = 1.3, pb = 0.04)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -57,9 +57,7 @@ The positive hyper-parameter \eqn{a} in the gamma distribution of Bayesian shrin
 The positive hyper-parameter \eqn{b} in the gamma distribution of Bayesian shrinkage prior. The default value is 0.04.
 }
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
+
 \value{
 %%  ~Describe the value returned
 %%  If it is a LIST, use
@@ -84,19 +82,15 @@ Albert, J. H., & Chib, S. (1993). Bayesian analysis of binary and polychotomous 
 \author{
 Liang He
 }
-\note{
-%%  ~~further notes~~
-}
+
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
+
 \examples{
 data(hbmr_bin_data)
-hbmr_bin(hbmr_bin_data$pheno, hbmr_bin_data$geno[,1:20], fam=1, kin= hbmr_bin_data$kin, 
-iter=10000, burnin=1000)
+hbmr_bin(hbmr_bin_data$pheno[1:500], hbmr_bin_data$geno[1:500,1:3], fam=1, 
+kin= hbmr_bin_data$kin[1:500,1:500], iter=800, burnin=200)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

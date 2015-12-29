@@ -8,8 +8,8 @@ Hierarchical Bayesian multiple regression model incorporating genotype uncertain
 The function implements HBMR using Gibbs sampling method for quantitative traits.
 }
 \usage{
-hbmr(pheno, geno, qi = matrix(), fam = 0, kin = matrix(), iter = 10000, burnin = 500, gq = 20, 
-imp = 0.1, cov = matrix(), maf = c(), rvinfo = FALSE, pa = 1.3, pb = 0.04)
+hbmr(pheno, geno, qi = matrix(), fam = 0, kin = matrix(), iter = 10000, burnin = 500, 
+gq = 20, imp = 0.1, cov = matrix(), maf = c(), rvinfo = FALSE, pa = 1.3, pb = 0.04)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -59,9 +59,7 @@ The positive hyper-parameter \eqn{a} in the gamma distribution of Bayesian shrin
 The positive hyper-parameter \eqn{b} in the gamma distribution of Bayesian shrinkage prior. The default value is 0.04.
 }
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
+
 \value{
 %%  ~Describe the value returned
 %%  If it is a LIST, use
@@ -83,18 +81,15 @@ He, L., Pitk‰niemi, J., Sarin, A. P., Salomaa, V., Sillanp‰‰, M. J., & Ripatti, 
 \author{
 Liang He
 }
-\note{
-%%  ~~further notes~~
-}
+
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
+
 \examples{
 data(hbmr_data)
-hbmr(hbmr_data$pheno_data, hbmr_data$geno_data, hbmr_data$qual_data, iter=10000, burnin=1000)
+hbmr(hbmr_data$pheno_data, hbmr_data$geno_data[,1:3], hbmr_data$qual_data[,1:3], 
+iter=10000, burnin=1000)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

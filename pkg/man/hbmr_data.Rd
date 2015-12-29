@@ -5,7 +5,7 @@
 Example data for HBMR
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of the dataset. ~~
+This is an example dataset consisting of continuous traits for the hbmr function.
 }
 \usage{data(hbmr_data)}
 \format{
@@ -15,17 +15,8 @@ List of 3
  $ geno_data : num [1:600, 1:50] 1 0 0 0 0 0 0 0 0 0 ...
  $ qual_data : num [1:600, 1:50] 5 5 5 99 99 99 99 99 99 99 ...
 }
-\details{
-%%  ~~ If necessary, more details than the __description__ above ~~
-}
-\source{
-%%  ~~ reference to a publication or URL from which the data were obtained ~~
-}
-\references{
-%%  ~~ possibly secondary sources and usages ~~
-}
+
 \examples{
 data(hbmr_data)
-## maybe str(hbmr_data) ; plot(hbmr_data) ...
 }
 \keyword{datasets}

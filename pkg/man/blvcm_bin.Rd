@@ -76,18 +76,13 @@ Albert, J. H., & Chib, S. (1993). Bayesian analysis of binary and polychotomous 
 \author{
 Liang He
 }
-\note{
-%%  ~~further notes~~
-}
+
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
 \examples{
 data(blvcm_bin_data)
-blvcm_bin(blvcm_bin_data$pheno, blvcm_bin_data$geno, iter=20000, burnin=1000, model=2)
+blvcm_bin(blvcm_bin_data$pheno, blvcm_bin_data$geno[,1:3], iter=5000, burnin=500, model=2)
 
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the

@@ -2,10 +2,10 @@
 \alias{hbmr_bin_data}
 \docType{data}
 \title{
-Example data for HBMR_bin
+Example data for hbmr_bin
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of the dataset. ~~
+This is an example dataset consisting of binary traits for the hbmr_bin function.
 }
 \usage{data(hbmr_bin_data)}
 \format{
@@ -16,14 +16,7 @@ List of 2
  $ qi : int [1:1720, 1:40] 0 0 0 0 0 0 0 0 0 0 ...
  $ kin : int [1:1720, 1:1720] 0 0 0 0 0 0 0 0 0 0 ...
 }
-\details{
-%%  ~~ If necessary, more details than the __description__ above ~~
-}
-\source{
-%%  ~~ reference to a publication or URL from which the data were obtained ~~
-}
-\references{
-%%  ~~ possibly secondary sources and usages ~~
-}
+
 \examples{
 data(hbmr_bin_data)
+}

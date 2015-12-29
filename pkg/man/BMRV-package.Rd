@@ -16,7 +16,7 @@ Package: \tab BMRV\cr
 Type: \tab Package\cr
 Version: \tab 1.3\cr
 Date: \tab 2015-12-06\cr
-License: \tab None\cr
+License: \tab GPL (>=2)\cr
 }
 blvcm
 hbmr
@@ -31,12 +31,12 @@ He, L., Sillanp‰‰, M. J., Ripatti, S., & Pitk‰niemi, J. (2014). Bayesian Latent 
 
 He, L., Pitk‰niemi, J., Sarin, A. P., Salomaa, V., Sillanp‰‰, M. J., & Ripatti, S. (2015). Hierarchical Bayesian Model for Rare Variant Association Analysis Integrating Genotype Uncertainty in Human Sequence Data. Genetic epidemiology, 39(2), 89-100.
 }
-~~ Optionally other standard keywords, one per line, from file KEYWORDS in the R documentation directory ~~
+
 \keyword{ package }
 \seealso{
 
 }
 \examples{
 data(blvcm_data)
-temp<- blvcm(blvcm_data$pheno_data, blvcm_data$geno_data, iter=20000, model = 3)
+temp<- blvcm(blvcm_data$pheno_data, blvcm_data$geno_data[,1:3], iter=10000, model = 3)
 }
