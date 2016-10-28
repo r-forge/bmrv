@@ -67,7 +67,7 @@ The positive hyper-parameter \eqn{b} in the gamma distribution of Bayesian shrin
   \item{mean }{The mean of the posterior of \eqn{\beta_0}}
   \item{var }{The inverse of the mean of posterior of precision 1/\eqn{\sigma}}
   \item{est_geno }{The number of genotypes whose uncertainty are considered in estimation}
-  \item{var_ran }{The estimated variance of the random effect for familty design}
+  \item{var_ran }{The estimated variance of the random effect for family design}
   \item{rv_mean_es }{The means of the posterior of \eqn{\gamma} for the \eqn{K} RVs}
   \item{rv_sd_es }{The standard deviations of the posterior of \eqn{\gamma} for the \eqn{K} RVs}
   \item{mean_cov }{The means of the posterior of for the \eqn{M} covariates}

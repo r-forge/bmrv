@@ -3,10 +3,10 @@
 \alias{BMRV}
 \docType{package}
 \title{
-Bayesian models for rare variant association detection
+Bayesian models for rare variant association analysis
 }
 \description{
-This package provides two Bayesian models for detecting the association between rare variants and traits that can be continuous, ordinal or binary. 
+This package provides two Bayesian models for detecting the association between a set of rare genetic variants and a trait that can be continuous, ordinal or binary. 
 BLVCM detects interaction effect and is dedicated to twin design while it can also be applied to independent samples. 
 HBMR incorporates genotype uncertainty information and can be applied to either independent or family samples. Furhtermore, it deals with continuous, binary and ordinal traits.
 }
@@ -14,8 +14,8 @@ HBMR incorporates genotype uncertainty information and can be applied to either 
 \tabular{ll}{
 Package: \tab BMRV\cr
 Type: \tab Package\cr
-Version: \tab 1.3\cr
-Date: \tab 2015-12-06\cr
+Version: \tab 1.4\cr
+Date: \tab 2016-10-27\cr
 License: \tab GPL (>=2)\cr
 }
 blvcm
