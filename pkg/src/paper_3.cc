@@ -52,6 +52,9 @@ void gibbssampler2(double *result, int * numRows, int * numCols, int * numCols2,
 	
 	double p_a = 1.3;
 	double p_b = 0.04;
+
+	double tau_r_a = 0.001;
+	double tau_r_b = 0.001;
 	
 		double * p = mat1;
 			for(int i = 0; i < NUM_SUB; i++)
@@ -517,7 +520,7 @@ void gibbssampler2(double *result, int * numRows, int * numCols, int * numCols2,
 			{
 				temp_ran += ran_t[j]*ran_t[j];
 			}
-			gen_type3 die_gen_tauran(generator, distribution_type3(0.001+0.5*NUM_SUB, 1/(0.001+0.5*temp_ran) ));
+			gen_type3 die_gen_tauran(generator, distribution_type3(tau_r_a+0.5*NUM_SUB, 1/(tau_r_b+0.5*temp_ran) ));
 			boost::generator_iterator<gen_type3> die_tauran(&die_gen_tauran);
 			tau_ran_t = *die_tauran++;
 		

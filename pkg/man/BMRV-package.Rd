@@ -15,7 +15,7 @@ HBMR incorporates genotype uncertainty information and can be applied to either 
 Package: \tab BMRV\cr
 Type: \tab Package\cr
 Version: \tab 1.4\cr
-Date: \tab 2016-10-27\cr
+Date: \tab 2016-10-29\cr
 License: \tab GPL (>=2)\cr
 }
 blvcm
