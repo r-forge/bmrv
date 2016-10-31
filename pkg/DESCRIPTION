@@ -1,7 +1,7 @@
 Package: BMRV
 Type: Package
 Title: Bayesian Models for Rare Variant Association Analysis
-Version: 1.4
+Version: 1.32
 Date: 2016-10-29
 Author: Liang He
 Maintainer: Liang He <liang.he@duke.edu>
